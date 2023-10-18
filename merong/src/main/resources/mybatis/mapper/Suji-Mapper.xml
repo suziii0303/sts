@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suji.merong.mapper.SujiMapper">
+
+	<select id="listSuji" resultType="SujiVO">
+		select * from suji
+	</select>
+
+	<select id="getSuji" parameterType="SujiVO" resultType="SujiVO">
+		select *
+		from suji where suji_num=#{sujiNum}
+	</select>
+
+	<insert id="insertSuji" parameterType="SujiVO">
+		insert into
+		suji(suji_num,suji_name,suji_content,suji_file)
+		values(seq_suji.nextval,#{sujiName},#{sujiContent},#{sujiFile})
+	</insert>
+
+	<update id="updateSuji" parameterType="SujiVO">
+		UPDATE suji
+		SET
+		suji_name=#{sujiName},
+		suji_content=#{sujiContent},
+		suji_file=#{sujiFile}
+		WHERE
+		suji_num=#{sujiNum}
+	</update>
+
+	<delete id="deleteSuji" parameterType="SujiVO">
+		delete from suji where
+		suji_num=#{sujiNum}
+	</delete>
+
+
+
+</mapper>
