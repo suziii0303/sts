@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/><!-- 필수 -->	
+		<setting name="jdbcTypeForNull" value="VARCHAR"/><!-- db와 java null 이 연동 되지 않아 연동하기 위한(java null -> 문자열로 변환  -->
+	</settings>
+	<typeAliases>
+		<!-- 디렉토리(패키지 안에 있는거 통째로  별명을 지어줄 때 사용
+		-->
+		<package name="com.minu.merong.vo"/> 
+		<!-- com.minu.merong.vo.Chahyun  => Chahyun -->
+<!-- 		<typeAlias type="com.minu.merong.vo.Chahyun" alias="Chahyun"/>  -->
+	</typeAliases>
+</configuration>
